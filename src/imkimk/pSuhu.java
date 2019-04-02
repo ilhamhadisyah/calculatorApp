@@ -65,6 +65,11 @@ public class pSuhu extends javax.swing.JPanel {
                 isiInputanActionPerformed(evt);
             }
         });
+        isiInputan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                isiInputanKeyTyped(evt);
+            }
+        });
         jPanel2.add(isiInputan);
         isiInputan.setBounds(150, 70, 60, 30);
 
@@ -192,6 +197,13 @@ public class pSuhu extends javax.swing.JPanel {
     private void kelvinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelvinActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_kelvinActionPerformed
+
+    private void isiInputanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_isiInputanKeyTyped
+        // TODO add your handling code here:
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_isiInputanKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

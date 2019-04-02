@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package imkimk;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -69,6 +72,11 @@ public class pMassa extends javax.swing.JPanel {
         isiInputan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 isiInputanActionPerformed(evt);
+            }
+        });
+        isiInputan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                isiInputanKeyTyped(evt);
             }
         });
         paneMassa.add(isiInputan);
@@ -172,11 +180,15 @@ public class pMassa extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void isiInputanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isiInputanActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        
+      
     }//GEN-LAST:event_isiInputanActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+       
+        
          inputan = Float.parseFloat(isiInputan.getText().toString());
         if (pilihSatuan.getSelectedItem().equals("kg")) {
             kg.setText("" + inputan);
@@ -238,6 +250,13 @@ public class pMassa extends javax.swing.JPanel {
             mg.setText("" + inputan);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void isiInputanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_isiInputanKeyTyped
+        // TODO add your handling code here:
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_isiInputanKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

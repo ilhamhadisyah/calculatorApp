@@ -109,6 +109,12 @@ public class pPanjang extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
         jLabel11.setText("m");
 
+        isiInputan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                isiInputanKeyTyped(evt);
+            }
+        });
+
         dm.setEditable(false);
         dm.setBackground(new java.awt.Color(255, 255, 255));
         dm.setBorder(null);
@@ -313,6 +319,13 @@ public class pPanjang extends javax.swing.JPanel {
     private void pilihSatuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilihSatuanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pilihSatuanActionPerformed
+
+    private void isiInputanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_isiInputanKeyTyped
+        // TODO add your handling code here:
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_isiInputanKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

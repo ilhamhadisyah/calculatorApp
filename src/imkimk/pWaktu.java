@@ -52,6 +52,12 @@ public class pWaktu extends javax.swing.JPanel {
 
         jLabel2.setText("Masukkan Angka : ");
 
+        isiInputan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                isiInputanKeyTyped(evt);
+            }
+        });
+
         pilihSatuan.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
         pilihSatuan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "jam", "menit", "detik" }));
 
@@ -171,6 +177,13 @@ public class pWaktu extends javax.swing.JPanel {
             detik.setText(""+inputan);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void isiInputanKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_isiInputanKeyTyped
+        // TODO add your handling code here:
+        if(!Character.isDigit(evt.getKeyChar())){
+            evt.consume();
+        }
+    }//GEN-LAST:event_isiInputanKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
